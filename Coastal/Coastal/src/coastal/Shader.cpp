@@ -1,14 +1,8 @@
 #include "Shader.h"
 
-static const Coastal::__ShaderProgramSource& Coastal::__ParseShader(const std::string& filepath)
+const Coastal::__ShaderProgramSource& Coastal::__ParseShader(const std::string& filepath)
 {
     std::ifstream stream(filepath);
-
-    if (!(stream.is_open()))
-    {
-        std::cout << "Shader source file doesn't exist!\n";
-        exit(3); // EXIT CODE 3 = SHADER SOURCE FILE NOT FOUND ERROR
-    }
 
     enum class ShaderType
     {
@@ -34,23 +28,13 @@ static const Coastal::__ShaderProgramSource& Coastal::__ParseShader(const std::s
                 type = ShaderType::FRAGMENT;
             }
         }
-        else if (line.find("//") != std::string::npos)
-        {
-            for (size_t i = 0; i < line.length(); i++)
-            {
-                if (line[i] == '/')
-                    line[i] = ' ';
-            }
-
-            stringStream[(int)type] << line << '\n';
-        }
         else
         {
             stringStream[(int)type] << line << '\n';
         }
     }
 
-    return { stringStream[0].str(), stringStream[1].str() };
+    return {stringStream[0].str(), stringStream[1].str() };
 }
 
 uint32_t Coastal::__CompileShader(uint32_t type, const std::string& source)
@@ -105,4 +89,17 @@ Coastal::Shader::Shader(const std::string& filepath)
     __ShaderProgramSource source = __ParseShader(filepath);
 
     m_RendererId = __CreateShader(source.VertexShaderSource, source.FragmnetShaderSource);
+}
+
+void Coastal::Shader::SetUniform4f(const std::string& name, const Rgba& value)
+{
+    CSTL_GLCALL(int u_ColorLocation = glGetUniformLocation(m_RendererId, name.c_str()));
+
+    if (u_ColorLocation < 0)
+    {
+        std::cout << "Couldn't find uniform!" << '\n';
+        exit(4); // EXIT CODE 4 = COULD NOT FIND UNIFORM ERROR
+    }
+
+    CSTL_GLCALL(glUniform4f(u_ColorLocation, value.R, value.G, value.B, value.A));
 }

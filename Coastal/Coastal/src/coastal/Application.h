@@ -2,6 +2,7 @@
 
 #include "pch.h"
 
+#include "Drawing.h"
 #include "Scene.h"
 
 namespace Coastal {

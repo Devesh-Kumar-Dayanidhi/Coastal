@@ -1,2 +1,7 @@
 ﻿  EntryPoint.cpp
-  Coastal.vcxproj -> C:\Users\Devesh\Programs\C++\Coastal\Debug\Coastal.exe
+C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\VertexBufferLayout.h(26,4): warning C4551: function call missing argument list
+C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\VertexArray.h(18,30): warning C4551: function call missing argument list
+C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\VertexArray.h(19,32): warning C4551: function call missing argument list
+C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\Shader.h(28,23): warning C4551: function call missing argument list
+C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\Shader.h(29,25): warning C4551: function call missing argument list
+  Coastal.vcxproj -> C:\Users\Devesh\Programs\C++\Coastal\Coastal\Debug\Coastal.exe

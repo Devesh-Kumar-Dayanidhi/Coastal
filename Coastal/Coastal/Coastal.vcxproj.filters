@@ -18,9 +18,6 @@
     <ClCompile Include="src\coastal\EntryPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\coastal\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\coastal\VertexBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\coastal\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\coastal\Drawing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,8 +71,14 @@
     <ClInclude Include="src\coastal\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\coastal\Shader.glsl.h">
+    <ClInclude Include="src\coastal\Drawing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\coastal\Vector2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\coastal\res\shaders\Shader.glsl" />
   </ItemGroup>
 </Project>

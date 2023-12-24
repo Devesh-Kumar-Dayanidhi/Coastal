@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\coastal\Application.cpp" />
+    <ClCompile Include="src\coastal\Drawing.cpp" />
     <ClCompile Include="src\coastal\IndexBuffer.cpp" />
     <ClCompile Include="src\coastal\pch.cpp" />
     <ClCompile Include="src\coastal\Shader.cpp" />
@@ -29,17 +29,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\coastal\Application.h" />
+    <ClInclude Include="src\coastal\Drawing.h" />
     <ClInclude Include="src\coastal\ErrorHandling.h" />
     <ClInclude Include="src\coastal\IndexBuffer.h" />
     <ClInclude Include="src\coastal\pch.h" />
     <ClInclude Include="src\coastal\Rgba.h" />
     <ClInclude Include="src\coastal\Scene.h" />
-    <ClInclude Include="src\coastal\Shader.glsl.h" />
     <ClInclude Include="src\coastal\Shader.h" />
+    <ClInclude Include="src\coastal\Vector2.h" />
     <ClInclude Include="src\coastal\VertexArray.h" />
     <ClInclude Include="src\coastal\VertexBuffer.h" />
     <ClInclude Include="src\coastal\VertexBufferLayout.h" />
     <ClInclude Include="src\app\ExampleLayer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\coastal\res\shaders\Shader.glsl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
