@@ -4,6 +4,7 @@
 
 #include "Drawing.h"
 #include "Scene.h"
+#include "Renderer.h"
 
 namespace Coastal {
 
@@ -23,6 +24,7 @@ namespace Coastal {
 		virtual void OnUpdate() = 0;
 	protected:
 		Scene m_Scene;
+		Renderer m_CoastalRenderer;
 	private:
 		uint32_t m_ViewportWidth = 400, m_ViewportHeight = 400;
 		Coastal::Rgba m_ClearColor = Coastal::Rgba(0.1f, 0.7f, 0.6f, 1.0f);

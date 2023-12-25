@@ -1,8 +1,14 @@
 #include "Shader.h"
 
-const Coastal::__ShaderProgramSource& Coastal::__ParseShader(const std::string& filepath)
+Coastal::__ShaderProgramSource Coastal::__ParseShader(const std::string& filepath)
 {
     std::ifstream stream(filepath);
+
+    if (!(stream.is_open()))
+    {
+        std::cout << "Shader source file doesn't exist!" << '\n';
+        exit(3); // EXIT CODE 3 = SHADER SOURCE FILE NOT FOUND ERROR
+    }
 
     enum class ShaderType
     {
@@ -13,6 +19,7 @@ const Coastal::__ShaderProgramSource& Coastal::__ParseShader(const std::string& 
 
     std::string line;
     std::stringstream stringStream[2];
+
     ShaderType type = ShaderType::NONE;
 
     while (getline(stream, line))
@@ -34,7 +41,28 @@ const Coastal::__ShaderProgramSource& Coastal::__ParseShader(const std::string& 
         }
     }
 
-    return {stringStream[0].str(), stringStream[1].str() };
+    return { stringStream[0].str(), stringStream[1].str() };
+}
+
+std::string Coastal::__ParseFile(const std::string& filepath)
+{
+    std::ifstream stream(filepath);
+
+    if (!(stream.is_open()))
+    {
+        std::cout << "File not found error!" << '\n';
+        exit(5); // EXIT CODE 5 = FILE NOT FOUND ERROR
+    }
+
+    std::string line;
+    std::stringstream stringStream[1];
+
+    while (getline(stream, line))
+    {
+        stringStream[0] << line << '\n';
+    }
+
+    return stringStream[0].str();
 }
 
 uint32_t Coastal::__CompileShader(uint32_t type, const std::string& source)
@@ -89,6 +117,11 @@ Coastal::Shader::Shader(const std::string& filepath)
     __ShaderProgramSource source = __ParseShader(filepath);
 
     m_RendererId = __CreateShader(source.VertexShaderSource, source.FragmnetShaderSource);
+}
+
+Coastal::Shader::Shader(const std::string& vertexShaderSource, const std::string& fragmentShaderSource)
+{
+    m_RendererId = __CreateShader(vertexShaderSource, fragmentShaderSource);
 }
 
 void Coastal::Shader::SetUniform4f(const std::string& name, const Rgba& value)

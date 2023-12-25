@@ -10,6 +10,7 @@ namespace Coastal {
     class IndexBuffer
     {
     public:
+        IndexBuffer() { m_RendererId = 0; m_Count = 0; }
         IndexBuffer(uint32_t* data, uint32_t count, uint32_t usage);
         ~IndexBuffer();
     public:

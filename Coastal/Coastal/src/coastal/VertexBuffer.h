@@ -8,6 +8,7 @@ namespace Coastal {
     class VertexBuffer
     {
     public:
+        VertexBuffer() { m_RendererId = 0; }
         VertexBuffer(const void* data, uint32_t size, uint32_t usage);
         ~VertexBuffer();
     public:

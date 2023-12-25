@@ -1,7 +1,8 @@
-﻿  EntryPoint.cpp
-C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\VertexBufferLayout.h(26,4): warning C4551: function call missing argument list
-C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\VertexArray.h(18,30): warning C4551: function call missing argument list
-C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\VertexArray.h(19,32): warning C4551: function call missing argument list
-C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\Shader.h(28,23): warning C4551: function call missing argument list
-C:\Users\Devesh\Programs\C++\Coastal\Coastal\Coastal\src\coastal\Shader.h(29,25): warning C4551: function call missing argument list
+﻿  Renderer.cpp
+  EntryPoint.cpp
+  Generating Code...
+  LINK : C:\Users\Devesh\Programs\C++\Coastal\Coastal\Debug\Coastal.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
   Coastal.vcxproj -> C:\Users\Devesh\Programs\C++\Coastal\Coastal\Debug\Coastal.exe
