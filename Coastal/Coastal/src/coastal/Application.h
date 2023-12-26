@@ -1,7 +1,5 @@
 #pragma once
 
-#include "pch.h"
-
 #include "Drawing.h"
 #include "Scene.h"
 #include "Renderer.h"

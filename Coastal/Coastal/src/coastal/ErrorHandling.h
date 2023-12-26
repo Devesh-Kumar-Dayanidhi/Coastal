@@ -1,9 +1,17 @@
 #pragma once
 
-#define CSTL_ASSERT(x) if (!(x)) __debugbreak(); 
-#define CSTL_GLCALL(x) Coastal::GLClearError();\
-    x;\
-    CSTL_ASSERT(Coastal::GLLogCall(#x, __FILE__, __LINE__))
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
+#include <iostream>
+
+//#define CSTL_ASSERT(x) if (!(x)) __debugbreak(); 
+//#define CSTL_GLCALL(x) Coastal::GLClearError();\
+//    x;\
+//    CSTL_ASSERT(Coastal::GLLogCall(#x, __FILE__, __LINE__))
+
+#define CSTL_ASSERT(x) x
+#define CSTL_GLCALL(x) x
 
 namespace Coastal {
 

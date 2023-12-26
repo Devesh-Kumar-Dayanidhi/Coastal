@@ -23,7 +23,6 @@
     <ClCompile Include="src\coastal\Drawing.cpp" />
     <ClCompile Include="src\coastal\IndexBuffer.cpp" />
     <ClCompile Include="src\coastal\OpenGLObjectManager.cpp" />
-    <ClCompile Include="src\coastal\pch.cpp" />
     <ClCompile Include="src\coastal\Renderer.cpp" />
     <ClCompile Include="src\coastal\Shader.cpp" />
     <ClCompile Include="src\coastal\VertexArray.cpp" />
@@ -36,7 +35,6 @@
     <ClInclude Include="src\coastal\ErrorHandling.h" />
     <ClInclude Include="src\coastal\IndexBuffer.h" />
     <ClInclude Include="src\coastal\OpenGLObjectManager.h" />
-    <ClInclude Include="src\coastal\pch.h" />
     <ClInclude Include="src\coastal\Renderer.h" />
     <ClInclude Include="src\coastal\res\shaders\Basic.shader" />
     <ClInclude Include="src\coastal\Rgba.h" />

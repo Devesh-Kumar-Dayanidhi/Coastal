@@ -3,7 +3,6 @@
 #include <vector>
 #include <stdint.h>
 
-#include "pch.h"
 #include "ErrorHandling.h"
 
 namespace Coastal {

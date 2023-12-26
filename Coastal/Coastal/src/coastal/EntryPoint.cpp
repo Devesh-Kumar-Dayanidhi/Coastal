@@ -1,3 +1,4 @@
+#define GLEW_STATIC
 #include "../app/ExampleLayer.h"
 
 #define __CSTL_WIDTH 400

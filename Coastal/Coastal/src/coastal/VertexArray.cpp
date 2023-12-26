@@ -7,7 +7,7 @@ namespace Coastal {
 		CSTL_GLCALL(glGenVertexArrays(1, &m_RendererId));
 	}
 
-	void VertexArray::AddBuffer(const VertexBuffer& vbo, const VertexBufferLayout& layout)
+	void VertexArray::AddBuffer(const Coastal::VertexBuffer& vbo, const Coastal::VertexBufferLayout& layout)
 	{
 		Bind();
 		vbo.Bind();

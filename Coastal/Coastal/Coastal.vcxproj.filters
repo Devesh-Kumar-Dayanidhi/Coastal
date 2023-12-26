@@ -30,9 +30,6 @@
     <ClCompile Include="src\coastal\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\coastal\pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\coastal\Drawing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -60,9 +57,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\coastal\IndexBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\coastal\pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\coastal\ErrorHandling.h">

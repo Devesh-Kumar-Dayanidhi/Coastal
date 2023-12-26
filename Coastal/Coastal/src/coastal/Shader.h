@@ -1,7 +1,14 @@
 #pragma once
 
-#include "pch.h"
+#include <string>
+#include <sstream>
+#include <fstream>
+
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 #include "ErrorHandling.h"
+#include "Rgba.h"
 
 namespace Coastal {
 
@@ -31,7 +38,7 @@ namespace Coastal {
 	public:
 		void Bind() const { CSTL_GLCALL(glUseProgram(m_RendererId)); }
 		void UnBind() const { CSTL_GLCALL(glUseProgram(0)); }
-		void SetUniform4f(const std::string& name, const Rgba& value);
+		void SetUniform4f(const std::string& name, const Coastal::Rgba& value);
 	private:
 		uint32_t m_RendererId;
 	};
