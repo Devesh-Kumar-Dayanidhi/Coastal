@@ -1,9 +1,12 @@
 #include "../app/ExampleLayer.h"
 
+#define __CSTL_WIDTH 400
+#define __CSTL_HEIGHT 400
+#define __CSTL_TITLE "Coastal Application"
+#define __CSTL_COLOR 0.0f, 0.0f, 0.0f, 1.0f
+
 int main()
 {
-	ExampleLayer ex;
-
 	if (!glfwInit())
 	{
 		std::cout << "Failed to init glfw!\n";
@@ -19,7 +22,7 @@ int main()
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 	#endif
 
-	GLFWwindow* window = glfwCreateWindow(ex.GetWindowWidth(), ex.GetWindowHeight(), ex.GetWindowTitle().c_str(), nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(__CSTL_WIDTH, __CSTL_HEIGHT, __CSTL_TITLE, nullptr, nullptr);
 
 	glfwMakeContextCurrent(window);
 
@@ -29,10 +32,11 @@ int main()
 		exit(2); // EXIT CODE 2 = GLEW INIT FAILURE
 	}
 
+	ExampleLayer ex;
 	ex.Start();
 	while (!glfwWindowShouldClose(window))
 	{
-		glClearColor(ex.GetWindowColor().R, ex.GetWindowColor().G, ex.GetWindowColor().B, ex.GetWindowColor().A);
+		glClearColor(__CSTL_COLOR);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		ex.OnUpdate();

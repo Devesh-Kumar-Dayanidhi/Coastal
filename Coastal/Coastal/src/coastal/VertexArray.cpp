@@ -7,11 +7,6 @@ namespace Coastal {
 		CSTL_GLCALL(glGenVertexArrays(1, &m_RendererId));
 	}
 
-	VertexArray::~VertexArray()
-	{
-		CSTL_GLCALL(glDeleteVertexArrays(1, &m_RendererId));
-	}
-
 	void VertexArray::AddBuffer(const VertexBuffer& vbo, const VertexBufferLayout& layout)
 	{
 		Bind();

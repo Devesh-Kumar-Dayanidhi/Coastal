@@ -12,9 +12,9 @@ namespace Coastal {
     public:
         IndexBuffer() { m_RendererId = 0; m_Count = 0; }
         IndexBuffer(uint32_t* data, uint32_t count, uint32_t usage);
-        ~IndexBuffer();
     public:
         inline size_t GetCount() const { return m_Count; }
+        inline uint32_t GetRendererId() const { return m_RendererId; }
     public:
         inline void Bind() const { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererId); }
         inline void UnBind() const { glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); }

@@ -25,6 +25,7 @@ namespace Coastal {
 	{
 	public:
 		Shader() { m_RendererId = -1; }
+		~Shader() { CSTL_GLCALL(glDeleteProgram(m_RendererId)); }
 		Shader(const std::string& filepath);
 		Shader(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
 	public:

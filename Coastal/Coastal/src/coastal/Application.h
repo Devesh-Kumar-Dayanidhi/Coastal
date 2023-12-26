@@ -6,6 +6,8 @@
 #include "Scene.h"
 #include "Renderer.h"
 
+#include "OpenGLObjectManager.h"
+
 namespace Coastal {
 
 	typedef unsigned int uint32_t;
@@ -25,6 +27,7 @@ namespace Coastal {
 	protected:
 		Scene m_Scene;
 		Renderer m_CoastalRenderer;
+		OpenGLObjectManager m_CoastalManager;
 	private:
 		uint32_t m_ViewportWidth = 400, m_ViewportHeight = 400;
 		Coastal::Rgba m_ClearColor = Coastal::Rgba(0.1f, 0.7f, 0.6f, 1.0f);

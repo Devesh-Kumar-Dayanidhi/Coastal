@@ -7,8 +7,7 @@ class ExampleLayer : public Coastal::Application
 public:
 	void Start() override
 	{
-		m_CoastalRenderer = Coastal::Renderer(true);
-		Coastal::DrawQuad(1.0f, 1.0f, 0.0f, 0.0f, Coastal::Rgba(0.0f, 1.0f, 1.0f, 1.0f), m_CoastalRenderer);
+		Coastal::LoadQuad(1.0f, 1.0f, 0.0f, 0.0f, Coastal::Rgba(1.0f, 1.0f, 0.0f, 1.0f), m_CoastalRenderer, m_CoastalManager);
 	}
 
 	void OnUpdate() override
