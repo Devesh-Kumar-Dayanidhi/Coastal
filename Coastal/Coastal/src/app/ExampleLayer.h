@@ -12,7 +12,7 @@ public:
 
 	void OnUpdate() override
 	{
-		m_CoastalRenderer.Render();
+
 	}
 private:
 

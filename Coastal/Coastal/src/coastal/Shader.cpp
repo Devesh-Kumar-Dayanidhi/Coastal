@@ -124,7 +124,7 @@ Coastal::Shader::Shader(const std::string& vertexShaderSource, const std::string
     m_RendererId = __CreateShader(vertexShaderSource, fragmentShaderSource);
 }
 
-void Coastal::Shader::SetUniform4f(const std::string& name, const Rgba& value)
+void Coastal::Shader::SetUniform4f(const std::string& name, const Rgba& value) const
 {
     CSTL_GLCALL(int u_ColorLocation = glGetUniformLocation(m_RendererId, name.c_str()));
 

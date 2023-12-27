@@ -19,6 +19,8 @@ namespace Coastal {
 		inline uint32_t GetWindowHeight() const { return m_ViewportHeight; }
 		inline const Coastal::Rgba& GetWindowColor() const { return m_ClearColor; }
 		inline const std::string& GetWindowTitle() const { return m_Title; }
+		inline const Coastal::Renderer& GetCoastalRenderer() const { return m_CoastalRenderer; }
+		inline const Coastal::OpenGLObjectManager& GetCoastalManager() const { return m_CoastalManager; }
 	protected:
 		virtual void Start() = 0;
 		virtual void OnUpdate() = 0;

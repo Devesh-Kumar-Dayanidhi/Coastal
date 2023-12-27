@@ -38,7 +38,7 @@ namespace Coastal {
 	public:
 		void Bind() const { CSTL_GLCALL(glUseProgram(m_RendererId)); }
 		void UnBind() const { CSTL_GLCALL(glUseProgram(0)); }
-		void SetUniform4f(const std::string& name, const Coastal::Rgba& value);
+		void SetUniform4f(const std::string& name, const Coastal::Rgba& value) const;
 	private:
 		uint32_t m_RendererId;
 	};
