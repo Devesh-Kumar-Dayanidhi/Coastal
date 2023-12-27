@@ -7,9 +7,9 @@ namespace Coastal {
 	public:
 		Vector2() = default;
 		Vector2(float x, float y) :
-			x(x), y(y) {}
+			X(x), Y(y) {}
 	public:
-		float x = 0.0f, y = 0.0f;
+		float X = 0.0f, Y = 0.0f;
 	};
 
 }

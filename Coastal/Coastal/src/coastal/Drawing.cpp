@@ -10,10 +10,10 @@ void Coastal::LoadAndDrawQuad(float width, float height, float x, float y, const
     p4 = Vector2((x + width / 2), (y - height / 2));
 
     float verticies[8] = {
-        p1.x, p1.y,
-        p2.x, p2.y,
-        p3.x, p3.y,
-        p4.x, p4.y
+        p1.X, p1.Y,
+        p2.X, p2.Y,
+        p3.X, p3.Y,
+        p4.X, p4.Y
     };
 
     unsigned int indicies[6] = {
@@ -50,10 +50,10 @@ void Coastal::LoadQuad(float width, float height, float x, float y, const Coasta
     p4 = Vector2((x + width / 2), (y - height / 2));
 
     float verticies[8] = {
-        p1.x, p1.y,
-        p2.x, p2.y,
-        p3.x, p3.y,
-        p4.x, p4.y
+        p1.X, p1.Y,
+        p2.X, p2.Y,
+        p3.X, p3.Y,
+        p4.X, p4.Y
     };
 
     unsigned int indicies[6] = {
@@ -73,5 +73,6 @@ void Coastal::LoadQuad(float width, float height, float x, float y, const Coasta
     Coastal::IndexBuffer ibo = manager.CreateIndexBuffer(indicies, sizeof(indicies) / sizeof(indicies[0]), GL_STATIC_DRAW);
 
     renderer.AddVertexArray(vao);
-    renderer.AddShader(color);
+    renderer.AddTransform(Coastal::Vector2(x, y));
+    renderer.AddColor(color);
 }

@@ -9,6 +9,8 @@
 
 #include "ErrorHandling.h"
 #include "Rgba.h"
+#include "Vector2.h"
+#include "Vector3.h"
 
 namespace Coastal {
 
@@ -38,6 +40,9 @@ namespace Coastal {
 	public:
 		void Bind() const { CSTL_GLCALL(glUseProgram(m_RendererId)); }
 		void UnBind() const { CSTL_GLCALL(glUseProgram(0)); }
+		void SetUniform1f(const std::string& name, float value) const;
+		void SetUniform2f(const std::string& name, const Coastal::Vector2& value) const;
+		void SetUniform3f(const std::string& name, const Coastal::Vector3& value) const;
 		void SetUniform4f(const std::string& name, const Coastal::Rgba& value) const;
 	private:
 		uint32_t m_RendererId;

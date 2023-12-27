@@ -124,15 +124,54 @@ Coastal::Shader::Shader(const std::string& vertexShaderSource, const std::string
     m_RendererId = __CreateShader(vertexShaderSource, fragmentShaderSource);
 }
 
-void Coastal::Shader::SetUniform4f(const std::string& name, const Rgba& value) const
+void Coastal::Shader::SetUniform1f(const std::string& name, float value) const
 {
-    CSTL_GLCALL(int u_ColorLocation = glGetUniformLocation(m_RendererId, name.c_str()));
+    CSTL_GLCALL(int u_UniformLocation = glGetUniformLocation(m_RendererId, name.c_str()));
 
-    if (u_ColorLocation < 0)
+    if (u_UniformLocation < 0)
     {
         std::cout << "Couldn't find uniform!" << '\n';
         exit(4); // EXIT CODE 4 = COULD NOT FIND UNIFORM ERROR
     }
 
-    CSTL_GLCALL(glUniform4f(u_ColorLocation, value.R, value.G, value.B, value.A));
+    CSTL_GLCALL(glUniform1f(u_UniformLocation, value));
+}
+
+void Coastal::Shader::SetUniform2f(const std::string& name, const Coastal::Vector2& value) const
+{
+    CSTL_GLCALL(int u_UniformLocation = glGetUniformLocation(m_RendererId, name.c_str()));
+
+    if (u_UniformLocation < 0)
+    {
+        std::cout << "Couldn't find uniform!" << '\n';
+        exit(4); // EXIT CODE 4 = COULD NOT FIND UNIFORM ERROR
+    }
+
+    CSTL_GLCALL(glUniform2f(u_UniformLocation, value.X, value.Y));
+}
+
+void Coastal::Shader::SetUniform3f(const std::string& name, const Coastal::Vector3& value) const
+{
+    CSTL_GLCALL(int u_UniformLocation = glGetUniformLocation(m_RendererId, name.c_str()));
+
+    if (u_UniformLocation < 0)
+    {
+        std::cout << "Couldn't find uniform!" << '\n';
+        exit(4); // EXIT CODE 4 = COULD NOT FIND UNIFORM ERROR
+    }
+
+    CSTL_GLCALL(glUniform3f(u_UniformLocation, value.X, value.Y, value.Z));
+}
+
+void Coastal::Shader::SetUniform4f(const std::string& name, const Rgba& value) const
+{
+    CSTL_GLCALL(int u_UniformLocation = glGetUniformLocation(m_RendererId, name.c_str()));
+
+    if (u_UniformLocation < 0)
+    {
+        std::cout << "Couldn't find uniform!" << '\n';
+        exit(4); // EXIT CODE 4 = COULD NOT FIND UNIFORM ERROR
+    }
+
+    CSTL_GLCALL(glUniform4f(u_UniformLocation, value.R, value.G, value.B, value.A));
 }

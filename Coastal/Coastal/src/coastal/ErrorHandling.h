@@ -5,13 +5,15 @@
 
 #include <iostream>
 
-//#define CSTL_ASSERT(x) if (!(x)) __debugbreak(); 
-//#define CSTL_GLCALL(x) Coastal::GLClearError();\
-//    x;\
-//    CSTL_ASSERT(Coastal::GLLogCall(#x, __FILE__, __LINE__))
-
+#ifdef _CSTL_DEBUG
+#define CSTL_ASSERT(x) if (!(x)) __debugbreak(); 
+#define CSTL_GLCALL(x) Coastal::GLClearError();\
+    x;\
+    CSTL_ASSERT(Coastal::GLLogCall(#x, __FILE__, __LINE__))
+#else
 #define CSTL_ASSERT(x) x
 #define CSTL_GLCALL(x) x
+#endif
 
 namespace Coastal {
 
